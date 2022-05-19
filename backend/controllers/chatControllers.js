@@ -5,6 +5,7 @@ const User = require( "../models/userModel" );
 //@description     Create or fetch One to One Chat
 //@route           POST /api/chat/
 //@access          Protected
+
 const accessChat = asyncHandler( async ( req, res ) =>
 {
     const { userId } = req.body; 
@@ -34,14 +35,18 @@ const accessChat = asyncHandler( async ( req, res ) =>
 
     if ( isChat.length > 0 )
     {
+        // there is only one object in this array as only 1 chat can exist between these users, that we matched earlier
+        // length > 0, so this means chat exists and we dont need to create more
         res.send( isChat[ 0 ] );
     }
     else
     {
+        // here we have to create a new chat 
         var chatData = {
             chatName: "sender",
             isGroupChat: false,
             users: [ req.user._id, userId ],
+            // we are trying to create a chat between userID(the other user i want to chat with )
         };
 
         try
@@ -51,7 +56,7 @@ const accessChat = asyncHandler( async ( req, res ) =>
                 "users",
                 "-password"
             );
-            res.status( 200 ).json( FullChat );
+            res.status( 200 ).send( FullChat );
         } catch ( error )
         {
             res.status( 400 );
@@ -94,6 +99,7 @@ const createGroupChat = asyncHandler( async ( req, res ) =>
 {
     if ( !req.body.users || !req.body.name )
     {
+        // at starting we need to have the name of the group and name of the contacts to be added in the group, if we dont find any of it , send error message
         return res.status( 400 ).send( { message: "Please Fill all the feilds" } );
     }
 
@@ -120,7 +126,7 @@ const createGroupChat = asyncHandler( async ( req, res ) =>
         const fullGroupChat = await Chat.findOne( { _id: groupChat._id } )
             .populate( "users", "-password" )
             .populate( "groupAdmin", "-password" );
-
+            // we have created the chat , now we need to populate it
         res.status( 200 ).json( fullGroupChat );
     } catch ( error )
     {
@@ -170,6 +176,7 @@ const removeFromGroup = asyncHandler( async ( req, res ) =>
     const removed = await Chat.findByIdAndUpdate(
         chatId,
         {
+            // push is for putting, we use pull to remove 
             $pull: { users: userId },
         },
         {
@@ -192,6 +199,7 @@ const removeFromGroup = asyncHandler( async ( req, res ) =>
 // @desc    Add user to Group / Leave
 // @route   PUT /api/chat/groupadd
 // @access  Protected
+
 const addToGroup = asyncHandler( async ( req, res ) =>
 {
     const { chatId, userId } = req.body;
