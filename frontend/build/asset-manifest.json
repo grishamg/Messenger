@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.34b63c62.css",
+    "main.js": "/static/js/main.959bfd23.js",
+    "static/media/pexels-miguel-á-padriñán-255379.jpg": "/static/media/pexels-miguel-á-padriñán-255379.3f46501afa7de468ce5a.jpg",
+    "index.html": "/index.html",
+    "main.34b63c62.css.map": "/static/css/main.34b63c62.css.map",
+    "main.959bfd23.js.map": "/static/js/main.959bfd23.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.34b63c62.css",
+    "static/js/main.959bfd23.js"
+  ]
+}
