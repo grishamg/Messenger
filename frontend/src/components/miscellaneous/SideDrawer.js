@@ -65,7 +65,7 @@ function SideDrawer ()
         if ( !search )
         {
             toast( {
-                title: "Please Enter something in search",
+                title: "Please enter something to search",
                 status: "warning",
                 duration: 5000,
                 isClosable: true,
