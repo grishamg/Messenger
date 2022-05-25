@@ -9,7 +9,7 @@ connectDB();
 const app = express();
 const userRoutes = require( './routes/userRoutes' )
 const chatRoutes = require( './routes/chatRoutes' )
-
+const messageRoutes = require( './routes/messageRoutes' )
 app.use( express.json() ); // to accept json data 
 
 app.get( '/', ( req, res ) =>

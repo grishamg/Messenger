@@ -25,7 +25,7 @@ import UserListItem from "../userAvatar/UserListItem";
 
 const UpdateGroupChatModal = ( { fetchMessages, fetchAgain, setFetchAgain } ) =>
 {
-    const { isOpen, onOpen, onClose } = useDisclosure();
+    const { isOpen, onOpen, onClose } = useDisclosure(); // for modal 
     const [ groupChatName, setGroupChatName ] = useState();
     const [ search, setSearch ] = useState( "" );
     const [ searchResult, setSearchResult ] = useState( [] );

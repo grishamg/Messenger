@@ -11,7 +11,6 @@ const ChatProvider = ( { children } ) =>
     const [ chats, setChats ] = useState();
 
     const history = useHistory();
-
     
     useEffect( () =>
     {
