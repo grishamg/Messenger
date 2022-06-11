@@ -42,6 +42,7 @@ const sendMessage = asyncHandler( async ( req, res ) =>
 
     try
     {
+        // put the message in the database now
         var message = await Message.create( newMessage );
 
         message = await message.populate( "sender", "name pic" ).execPopulate();
