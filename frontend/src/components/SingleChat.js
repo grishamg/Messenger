@@ -160,8 +160,8 @@ const SingleChat = ( { fetchAgain, setFetchAgain } ) =>
             setTyping( true );
             socket.emit( "typing", selectedChat._id );
         }
-        let lastTypingTime = new Date().getTime();
-        var timerLength = 3000;
+        let lastTypingTime = new Date().getTime(); // to stop typing 
+        var timerLength = 3000; // user stops after timerlength
         setTimeout( () =>
         {
             var timeNow = new Date().getTime();
@@ -248,7 +248,7 @@ const SingleChat = ( { fetchAgain, setFetchAgain } ) =>
                                     <Lottie
                                         options={ defaultOptions }
                                         // height={50}
-                                        width={ 70 }
+                                        width={ 60 }
                                         style={ { marginBottom: 15, marginLeft: 0 } }
                                     />
                                 </div>
