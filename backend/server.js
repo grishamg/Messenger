@@ -3,7 +3,7 @@ const { chats } = require( './data/data' );
 const dotenv = require( 'dotenv' );
 const connectDB = require( './config/db' );
 const colors = require( 'colors' );
-const { notFound, errorHandler } = require( './middleware/errorMiddleware' )
+const { notFound, errorHandler } = require( './middleware/errorMiddleware'  )
 dotenv.config();
 connectDB();
 const app = express();
