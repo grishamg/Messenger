@@ -13,7 +13,6 @@ const Login = () =>
     const handleClick = () => setShow( !show );
     const toast = useToast();
     const [ email, setEmail ] = useState();
-    const [ user, setUser ] = useState();
     const [ password, setPassword ] = useState();
     const [ loading, setLoading ] = useState( false );
 
@@ -60,9 +59,7 @@ const Login = () =>
             } );
             localStorage.setItem( "userInfo", JSON.stringify( data ) );
             setLoading( false );
-            const userInfo = JSON.parse( localStorage.getItem( "userInfo" ) );
-            setUser( userInfo )
-            history.push( "/chats" );
+            history.go( "/chats" );
         } catch ( error )
         {
             toast( {

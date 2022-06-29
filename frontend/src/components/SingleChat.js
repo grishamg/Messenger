@@ -11,10 +11,11 @@ import ProfileModal from "./miscellaneous/ProfileModal";
 import ScrollableChat from "./ScrollableChat";
 import Lottie from "react-lottie";
 import animationData from "../animations/typing.json";
+
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
-const ENDPOINT = "https://mern-mychats.herokuapp.com/";
+const ENDPOINT = "http://localhost:5000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
 var socket, selectedChatCompare;
 
 const SingleChat = ( { fetchAgain, setFetchAgain } ) =>
@@ -125,7 +126,9 @@ const SingleChat = ( { fetchAgain, setFetchAgain } ) =>
     useEffect( () =>
     {
         fetchMessages();
+
         selectedChatCompare = selectedChat;
+        // eslint-disable-next-line
     }, [ selectedChat ] );
 
     useEffect( () =>
@@ -160,8 +163,8 @@ const SingleChat = ( { fetchAgain, setFetchAgain } ) =>
             setTyping( true );
             socket.emit( "typing", selectedChat._id );
         }
-        let lastTypingTime = new Date().getTime(); // to stop typing 
-        var timerLength = 3000; // user stops after timerlength
+        let lastTypingTime = new Date().getTime();
+        var timerLength = 3000;
         setTimeout( () =>
         {
             var timeNow = new Date().getTime();
@@ -248,7 +251,7 @@ const SingleChat = ( { fetchAgain, setFetchAgain } ) =>
                                     <Lottie
                                         options={ defaultOptions }
                                         // height={50}
-                                        width={ 60 }
+                                        width={ 70 }
                                         style={ { marginBottom: 15, marginLeft: 0 } }
                                     />
                                 </div>

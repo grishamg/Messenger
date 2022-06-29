@@ -65,7 +65,7 @@ function SideDrawer ()
         if ( !search )
         {
             toast( {
-                title: "Please enter something to search",
+                title: "Please Enter something in search",
                 status: "warning",
                 duration: 5000,
                 isClosable: true,
@@ -164,7 +164,7 @@ function SideDrawer ()
                             />
                             <BellIcon fontSize="2xl" m={ 1 } />
                         </MenuButton>
-                        <MenuList pl={ 3 }>
+                        <MenuList pl={ 2 }>
                             { !notification.length && "No New Messages" }
                             { notification.map( ( notif ) => (
                                 <MenuItem
