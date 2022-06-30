@@ -7,3 +7,11 @@
     background-size: cover;
     background-position: center;
 }
+
+* {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

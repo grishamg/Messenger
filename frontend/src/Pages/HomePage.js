@@ -1,14 +1,14 @@
 import
-  {
-    Box,
-    Container,
-    Tab,
-    TabList,
-    TabPanel,
-    TabPanels,
-    Tabs,
-    Text,
-  } from "@chakra-ui/react";
+{
+  Box,
+  Container,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+} from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useHistory } from "react-router";
 import Login from "../components/Authentication/Login";
@@ -26,7 +26,7 @@ function Homepage ()
   }, [ history ] );
 
   return (
-    <Container maxW="xl" centerContent>
+    <Container maxW="xl" >
       <Box
         d="flex"
         justifyContent="center"
@@ -34,15 +34,14 @@ function Homepage ()
         bg="white"
         w="100%"
         m="40px 0 15px 0"
-        borderRadius="lg"
         borderWidth="1px"
       >
         <Text fontSize="4xl" fontFamily="Work sans">
-          Talk-A-Tive
+          My Chats
         </Text>
       </Box>
-      <Box bg="white" w="100%" p={ 4 } borderRadius="lg" borderWidth="1px">
-        <Tabs isFitted variant="soft-rounded">
+      <Box bg="white" w="100%" p={ 4 } borderWidth="1px">
+        <Tabs isFitted >
           <TabList mb="1em">
             <Tab>Login</Tab>
             <Tab>Sign Up</Tab>
