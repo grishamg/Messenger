@@ -13,10 +13,6 @@ const messageRoutes = require( './routes/messageRoutes' )
 const path = require( 'path' );
 app.use( express.json() ); // to accept json data 
 
-// app.get( '/', ( req, res ) =>
-// {
-//     res.send( "API IS running" )
-// } );
 
 app.use( '/api/user', userRoutes )
 app.use( '/api/chat', chatRoutes )

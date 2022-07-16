@@ -1,9 +1,11 @@
 const asyncHandler = require( 'express-async-handler' );
-const res = require( 'express/lib/response' );
+// const res = require( 'express/lib/response' );
 const User = require( '../models/userModel' );
 const generateToken = require( '../config/generateToken' )
+
 const registerUser = asyncHandler( async ( req, res ) =>
 {
+    // controller for registering a user
     const { name, email, password, pic } = req.body;
 
     if ( !name || !email || !password )
@@ -12,7 +14,7 @@ const registerUser = asyncHandler( async ( req, res ) =>
         throw new Error( 'Please Enter all the Fields' );
     }
 
-    const userExists = await User.findOne( { email } );
+    const userExists = await User.findOne( { email } ); // we are mapping users by email, it means one email can have only one user 
 
     if ( userExists )
     {
@@ -46,6 +48,7 @@ const registerUser = asyncHandler( async ( req, res ) =>
 
 const authUser = asyncHandler( async ( req, res ) =>
 {
+    // controller for authorizing a user 
     const { email, password } = req.body;
 
     const user = await User.findOne( { email } );
@@ -67,10 +70,10 @@ const authUser = asyncHandler( async ( req, res ) =>
     }
 }
 );
-
-// /api/user?search=grishm
+n
 const allUsers = asyncHandler( async ( req, res ) =>
 {
+    // still a doubt , how it happens 
     const keyword = req.query.search ? {
         $or: [
             { name: { $regex: req.query.search, $options: "i" } },
