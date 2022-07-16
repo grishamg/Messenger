@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.72a61562.chunk.css",
-    "main.js": "/static/js/main.65035e6b.chunk.js",
-    "main.js.map": "/static/js/main.65035e6b.chunk.js.map",
+    "main.css": "/static/css/main.42d57c5b.chunk.css",
+    "main.js": "/static/js/main.08488efc.chunk.js",
+    "main.js.map": "/static/js/main.08488efc.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.893dc895.js",
     "runtime-main.js.map": "/static/js/runtime-main.893dc895.js.map",
-    "static/js/2.65600cb7.chunk.js": "/static/js/2.65600cb7.chunk.js",
-    "static/js/2.65600cb7.chunk.js.map": "/static/js/2.65600cb7.chunk.js.map",
+    "static/js/2.11d3457d.chunk.js": "/static/js/2.11d3457d.chunk.js",
+    "static/js/2.11d3457d.chunk.js.map": "/static/js/2.11d3457d.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.72a61562.chunk.css.map": "/static/css/main.72a61562.chunk.css.map",
-    "static/js/2.65600cb7.chunk.js.LICENSE.txt": "/static/js/2.65600cb7.chunk.js.LICENSE.txt",
+    "static/css/main.42d57c5b.chunk.css.map": "/static/css/main.42d57c5b.chunk.css.map",
+    "static/js/2.11d3457d.chunk.js.LICENSE.txt": "/static/js/2.11d3457d.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/pexels-miguel-á-padriñán-255379.3f46501a.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.893dc895.js",
-    "static/js/2.65600cb7.chunk.js",
-    "static/css/main.72a61562.chunk.css",
-    "static/js/main.65035e6b.chunk.js"
+    "static/js/2.11d3457d.chunk.js",
+    "static/css/main.42d57c5b.chunk.css",
+    "static/js/main.08488efc.chunk.js"
   ]
 }
